@@ -1,0 +1,166 @@
+\documentclass[9pt,a4paper]{article}
+\pagestyle{empty}
+% ---------- PACKAGES ----------
+\usepackage{array}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{opensans}
+\usepackage{geometry}
+\usepackage{graphicx} 
+\usepackage{setspace}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=LINKBLUE,
+  linkcolor=LINKBLUE,
+  pdfborder={0 0 0}
+}
+
+% ---------- PAGE SETUP ----------
+\geometry{margin=0.45in}
+\setlength{\parindent}{0pt}
+% Optional manual paragraph skip
+\setlength{\parskip}{0.7ex}
+\setlist[itemize]{left=1.8em, label=\textbullet, itemsep=0.95pt, topsep=-0pt, partopsep=0pt, parsep=0.95pt,}
+
+
+% ---------- COLORS ----------
+\definecolor{EUROPASSBLUE}{HTML}{4D9ACA}
+\definecolor{EUROPASSLIGHTBLUE}{HTML}{E8F2F8}
+\definecolor{LINKBLUE}{HTML}{004A80}
+\definecolor{TEXTGRAY}{HTML}{565656}
+\definecolor{LABELGRAY}{HTML}{404040}
+\definecolor{MEDIUMGRAY}{HTML}{777777}
+\definecolor{LIGHTGRAY}{HTML}{858585}
+
+% ---------- SECTION TITLES ----------
+\titleformat{\section}
+  {\vspace{0.7em}
+\color{LABELGRAY}\large\bfseries\uppercase}{}{0em}{\color{LABELGRAY}}[\color{EUROPASSBLUE}{\titlerule[1pt]}]
+% Uniform spacing: no indent, 0.7em before, 0.3em after
+\titlespacing*{\section}{0pt}{0.7em}{0.3em}
+% patch to remove any preceding space
+\makeatletter
+\preto\section{\vspace*{-0.5em}}
+\makeatother
+
+% ---------- CUSTOM COMMANDS ----------
+
+\newcommand{\dates}[1]{%
+  \textcolor{LIGHTGRAY}{[ #1 ]}
+}
+
+\newcommand{\jobentry}[4]{%
+ \vspace{0.6em}%
+ \textcolor{LABELGRAY}{\faBuilding[regular]} \textcolor{MEDIUMGRAY}{ \noindent\textit{\textbf{#1  }}\textcolor{LIGHTGRAY}{–  #2} }\\[0.3em]
+ \noindent\textbf{\textcolor{LABELGRAY}{#4}}\ \dates{#3} \\[-1.1em]
+}
+
+\newcommand{\eduentry}[4]{%
+  \textcolor{LABELGRAY}{\textbf{#1}} \\
+  \textcolor{MEDIUMGRAY}{\textit{\textbf{#3}}} \dates{#2} \\
+  \textcolor{MEDIUMGRAY}{#4} 
+}
+
+\newcommand{\project}[1]{%
+  \textcolor{MEDIUMGRAY}{\textbf{\textit{#1}}}
+}
+
+\newcommand{\skillsline}[1]{%
+  \\[0.3em]
+  \textcolor{LABELGRAY}{\hl{\textbf{#1}}}
+}
+
+% ---------- BEGIN DOCUMENT ----------
+
+\begin{document}
+\color{TEXTGRAY}
+\sethlcolor{EUROPASSLIGHTBLUE}
+
+% ---------- HEADER ----------
+
+\begin{center}
+  \begin{minipage}[c]{0.2\textwidth}
+    \includegraphics[width=\linewidth,keepaspectratio]{cv_avatar.png}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.75\textwidth}
+      \textcolor{LABELGRAY}{\huge\textbf{El Sysweave}}\\[2mm]
+      \renewcommand{\arraystretch}{1.2} 
+      \begin{tabular}{@{} >{\centering\arraybackslash}m{1.0em} @{\quad} m{0.75\textwidth} @{}}
+        \textcolor{LINKBLUE}{\faHome}        & \textbf{Phone number:} (+00) 000 1111111 \\
+        \textcolor{LINKBLUE}{\faEnvelope}   & \textbf{Email address:} 
+           \href{mailto:elrandir@sysweave.wzrd}{elrandir@sysweave.wzrd} \\
+        \textcolor{LINKBLUE}{\faMapMarker*} & \textbf{Location:} Frankfurt, Germany \\
+        \textcolor{LINKBLUE}{\faLinkedinIn} & \textbf{LinkedIn:} 
+           \url{linkedin.com/in/elrandir-devopsmage} \\
+        \textcolor{LINKBLUE}{\faGithub} & \textbf{GitHub:} \url{https://github.com/elrandir}
+      \end{tabular}
+  \end{minipage}
+\end{center}
+
+
+\vspace{1.2em}
+
+\section*{About Me}
+Battle-tested \textbf{DevOps} wizard with \textbf{over a century of experience}. Fluent in both modern code and ancient runes, I bring deep technical knowledge and telepathic team coordination. Now seeking a position in the human tech sector that doesn’t involve dragons, dimension-folding bugs, or cursed JSON.
+
+% ---------- EXPERIENCE ----------
+
+\section*{Work Experience}
+
+\jobentry{ArcanaNet}{Remote}{2010 – Present}{Senior Infrastructure Mage}
+\skillsline{Cross-Realm Clouds · Terraform · GitHub Actions · Arcanes · Docker · AWS · GCP}
+\begin{itemize}
+  \item Designed cross-realm hybrid cloud solutions 
+  \item Secured multi-planar networks
+  \item Automated deployment rituals using Terraform and ritual chalk
+  \item Automated interdimensional deployments with GitHub Actions and pixie dust
+  \item Deployed scalable infrastructures without summoning unintended entities
+\end{itemize}
+
+\jobentry{Guild of Technical Restoration}{Great Britain, London}{1963 – 2010}{Spells\&DevOps Consultant}
+\skillsline{Telepathic communication · Mentoring · Git · Scrolls}
+\begin{itemize}
+   \item Led incident response teams during spell breaches and reality forks
+   \item Managed distributed teams of necromancers, data clerics, and IT warlocks with 97\% incident resolution rate 
+   \item Implemented "Telepathic Kanban" to track tasks through mental focus points and actual sticky notes
+\end{itemize}
+
+\jobentry{Support Enchanter}{Moscow, Russia}{1917 – 1963}{Support Enchanter}
+\begin{itemize}
+  \item Resolved scroll corruption and memory leaks in physical and ethereal storage
+  \item Administered network security wards and handled on-call necromantic recovery
+  \item Responded to magical outages using real-time divination dashboards
+\end{itemize}
+
+
+% ---------- EDUCATION ----------
+
+\section*{Education and Training}
+\begin{spacing}{1.2}
+    \eduentry{Master of Arcane Logic \& Spell-Based Computation}{1960 – 1962}{Mage University of Munich (MUM)}{City: Munich \quad | \quad Country: Germany}\\
+    {\eduentry{Bachelor of Applied Thaumaturgy and Magical Computation}{1909 – 1917}{King's University of Silverymoon}{City: Silverymoon \quad | \quad Country: Silverymoon \quad | \quad \#1 in Runic Algorithms}
+}%
+\end{spacing}
+
+
+\section*{Language Skills}
+\begin{spacing}{1.2}
+    {\textbf{Mother tongue:} Infernal \\
+    \textbf{Other language(s):} English - C2, German - C1, Russian - C1, Draconic - A2  
+}%
+\end{spacing}
+
+% ---------- SKILLS ----------
+\section*{Key Skills} 
+\begin{spacing}{1.2}{
+    \textbf{Languages \& Tools:} Python, JavaScript, Git, Nectomancy, Telepathy, Bash, Runes, Arcanes, Grafana, Crystall Spheres \\
+    \textbf{Cloud \& Infra:} Docker, Terraform, Google Cloud, AWS \\
+}
+\end{spacing}
+\end{document}
