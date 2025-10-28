@@ -1,2 +1,6 @@
 # EuroPass-CV
-Latex EuroPass-style CV template
+LaTeX EuroPass-style CV template.
+
+Compiler: XeLaTeX
+TeX Live version: 2025
+PDF Viewer: Overleaf
